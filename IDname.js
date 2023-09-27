@@ -27,11 +27,11 @@ if(window.localStorage) {
   console.log('ローカルストレージに対応していません');
 }
 
-// 別のファイルから関数呼び出し
-const myName = localStorage.getItem("OKID");
-const romagi = window.globalFunction.roma(localStorage.getItem("OKID"))
-document.getElementById("my-id").innerHTML = myName
-console.log('変換前 ' + myName + ', 変換後 ' + romagi)
+// // 別のファイルから関数呼び出し
+// const myName = localStorage.getItem("OKID");
+// const romagi = window.globalFunction.roma(localStorage.getItem("OKID"))
+// document.getElementById("my-id").innerHTML = myName
+// console.log('変換前 ' + myName + ', 変換後 ' + romagi)
 
 
 //ID決定ボタン
