@@ -27,18 +27,11 @@ if(window.localStorage) {
   console.log('ローカルストレージに対応していません');
 }
 
-var myName = localStorage.getItem("OKID");
-var romagi;
-
 // 別のファイルから関数呼び出し
-// ここにいれると，初めて使うときにエラーが出る
-if(myName != null){
-  console.log(myName)
-  romagi = window.globalFunction.roma(myName)
-  document.getElementById("my-id").innerHTML = myName
-  console.log('変換前 ' + myName + ', 変換後 ' + romagi)
-}
-
+const myName = localStorage.getItem("OKID");
+const romagi = window.globalFunction.roma(localStorage.getItem("OKID"))
+document.getElementById("my-id").innerHTML = myName
+console.log('変換前 ' + myName + ', 変換後 ' + romagi)
 
 
 //ID決定ボタン
@@ -50,7 +43,7 @@ IDnameOK.addEventListener('click', () => {
 
   // 別のファイルから関数呼び出し
   const myName = localStorage.getItem("OKID");
-  const romagi = window.globalFunction.roma(myName)
+  const romagi = window.globalFunction.roma(localStorage.getItem("OKID"))
   document.getElementById("my-id").innerHTML = myName
   console.log('変換前 ' + myName + ', 変換後 ' + romagi)
 
@@ -62,7 +55,7 @@ IDnameOK.addEventListener('click', () => {
 // ルーム名決定ボタン
 joinTrigger.addEventListener('click', () => {
   const myName = localStorage.getItem("OKID");
-  const romagi = window.globalFunction.roma(myName)
+  const romagi = window.globalFunction.roma(localStorage.getItem("OKID"))
 
   // IDがないときのアラート
   // IDとルーム名なし
@@ -93,7 +86,6 @@ joinTrigger.addEventListener('click', () => {
 // エンター入力
 document.addEventListener('keypress', OK);
 
-// エンター入力で入れない！！！
 // エンター入力用関数
 function OK(e) {
 	if(e.code === 'Enter'){
@@ -104,8 +96,8 @@ function OK(e) {
       //localStorageのOKIDキーに値を保存
       localStorage.setItem('OKID', IDtext.value);
       // 別のファイルから関数呼び出し
-      myName = localStorage.getItem("OKID");
-      romagi = window.globalFunction.roma(myName)
+      const myName = localStorage.getItem("OKID");
+      const romagi = window.globalFunction.roma(localStorage.getItem("OKID"))
       console.log('変換前 ' + myName + ', 変換後 ' + romagi)
 
       // 自分のIDを表示
@@ -113,7 +105,7 @@ function OK(e) {
       IDtext.value = "";
     }
     // IDありルーム名あり（入室）
-    else if(myName && roomName.value){
+    else if(romagi && roomName.value){
       OKbtn.play();
       localStorage.setItem('OKRoom', roomName.value);
       roomName.value = "";
@@ -124,16 +116,16 @@ function OK(e) {
     else if(!IDtext.value && !roomName.value){
       NObtn.play();
       alert("名前が設定されていません。名前を設定してください");
+      console.log(romagi)
       roomName.value = "";
-      console.log("うぇい")
       return
     }
     // IDなしルーム名あり
-    else if(roomName.value && !myName){
+    else if(roomName.value && !IDtext.value && !romagi){
       NObtn.play();
       alert("名前が設定されていません。名前を設定してください");
+      console.log(romagi)
       roomName.value = "";
-      console.log("はーい")
       return
     }
 	}

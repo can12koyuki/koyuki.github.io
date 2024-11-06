@@ -81,10 +81,11 @@ body{
   bottom: 2%;
   color: rgb(0, 0, 0);
   background-color: #619ffd;
+  box-shadow: 0 5px 0 #09658a;
   font-size: 200%;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #09658a;
+  border-radius:40px;
 }
 
 /* ミュートボタン */
@@ -94,10 +95,19 @@ body{
   bottom: 2%;
   color: rgb(0, 0, 0);
   background-color: #619ffd;
+  box-shadow: 0 5px 0 #09658a;
   font-size: 100%;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #09658a;
+  border-radius:40px;
+}
+
+/* ボタンクリック時の動作 */
+.Room-out:active, .mute-btn:active, 
+.chat-box:active, .chat-btn:active, .chatlogRe-btn:active, .chatlog-btn:active, 
+.gamestart-btn:active {
+  box-shadow: none;
+  transform: translateY(5px);
 }
 
 
@@ -225,9 +235,10 @@ pre {
   font-size: 200%;
   color: rgb(0, 0, 0);
   background-color: #ffc400;
+  box-shadow: 0 5px 0 #9e7d11;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #9e7d11;
+  border-radius:40px;
 }
 
 /* ログ表示用モーダル */
@@ -266,10 +277,11 @@ pre {
 .chatlogRe-btn{
   color: rgb(0, 0, 0);
   background-color: #ff8800;
+  box-shadow: 0 5px 0 #c96b00;
   font-weight: bold;
-  border: 2px solid #453a3a;
+  border: 2px solid #c96b00;
   font-size: 180%;
-  border-radius:8px;
+  border-radius:40px;
 }
 
 /* チャットログ表示ボタン */
@@ -280,9 +292,10 @@ pre {
   font-size: 180%;
   color: rgb(0, 0, 0);
   background-color: #ff8800;
+  box-shadow: 0 5px 0 #c96b00;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #c96b00;
+  border-radius:40px;
 }
 
 /* ゲームボタン */
@@ -293,9 +306,10 @@ pre {
   font-size: 200%;
   color: rgb(0, 0, 0);
   background-color: #1aff00;
+  box-shadow: 0 5px 0 #178f1d;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #178f1d;
+  border-radius:40px;
 }
 
 

@@ -47,7 +47,7 @@ body{
 .Vtimer{
   position: fixed;
   top: 1%;
-  right: 25%;
+  right: 23%;
   font-size: 300%;
   font-weight: bold;
   border: solid;
@@ -75,6 +75,16 @@ body{
   word-wrap: break-word;
 }
 
+/* ボタンクリック時の動作 */
+.Room-out:active, .mute-btn:active, .chat-btn:active, .chat-box:active, 
+.colorgame-btn:active, .gamestart-btn:active, .re-btn:active, 
+.sel1-btn:active, .sel2-btn:active, .sel3-btn:active, .sel4-btn:active, 
+.next-btn:active, .total-btn:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+
 /* ルーム退出ボタン */
 .Room-out{
   position: fixed;
@@ -82,10 +92,11 @@ body{
   bottom: 2%;
   color: rgb(0, 0, 0);
   background-color: #619ffd;
+  box-shadow: 0 5px 0 #09658a;
   font-size: 200%;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #09658a;
+  border-radius:40px;
 }
 
 /* ミュートボタン */
@@ -95,10 +106,11 @@ body{
   top: 2%;
   color: rgb(0, 0, 0);
   background-color: #619ffd;
+  box-shadow: 0 5px 0 #09658a;
   font-size: 100%;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #09658a;
+  border-radius:40px;
 }
 
 
@@ -201,7 +213,7 @@ pre {
 .messages{
   position: fixed;
   width: 85%;
-  height: 15%;
+  height: 10%;
   left: 1%;
   bottom: 0%;
   font-size: 180%;
@@ -229,9 +241,10 @@ pre {
   font-size: 150%;
   color: rgb(0, 0, 0);
   background-color: #ffc400;
+  box-shadow: 0 5px 0 #9e7d11;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #9e7d11;
+  border-radius:40px;
 }
 
 
@@ -244,9 +257,10 @@ pre {
   font-size: 300%;
   color: rgb(0, 0, 0);
   background-color: #1aff00;
+  box-shadow: 0 5px 0 #178f1d;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #178f1d;
+  border-radius:40px;
 }
 
 /* ルール説明モーダル */
@@ -258,77 +272,55 @@ pre {
   height: 100%;
   width: 100%;
   text-align: center;
+  margin-top: 0%;
 }
 .rulemodal-content {
   background-color: #f4f4f4;
-  top: 10%;
-  width: 55%;
+  width: 700px;
+  margin: 4.5% auto;
 }
 .rulemodal-header {
   max-height: 300px;
+}
+.carousel-control-prev{
+  background-color: rgb(0, 4, 255);
+  width: 80px;
+}
+.carousel-control-next{
+  background-color: rgb(183, 0, 255);
+  width: 80px;
 }
 
 
 /* ゲームボタン */
 .gamestart-btn{
-  /* position: fixed;
-  right: 60%;
-  top: 15%; */
+  display: inline-block;
   font-size: 250%;
   color: rgb(0, 0, 0);
   background-color: #1aff00;
+  box-shadow: 0 5px 0 #178f1d; /* 影の太さ・色 */
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #178f1d;
+  border-radius:40px;
 }
-
-/* 難易度ボタン */
-/* .easy-btn{
-  display: none;
-  position: fixed;
-  left: 28%;
-  top: 40%;
-  font-size: 180%;
+/* ゲームもどるボタン */
+.re-btn{
+  font-size: 250%;
   color: rgb(0, 0, 0);
-  background-color: #ffd900;
+  background-color: #568bff;
+  box-shadow: 0 5px 0 #09658a; /* 影の太さ・色 */
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #09658a;
+  border-radius:40px;
 }
-
-.normal-btn{
-  display: none;
-  position: fixed;
-  left: 43%;
-  top: 40%;
-  font-size: 180%;
-  color: rgb(0, 0, 0);
-  background-color: #1aff00;
-  font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
-}
-
-.def-btn{
-  display: none;
-  position: fixed;
-  left: 55%;
-  top: 40%;
-  font-size: 180%;
-  color: rgb(0, 0, 0);
-  background-color: #ff4800;
-  font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
-} */
 
 
 /* 問題表示 */
 .quest{
   display: none;
   position: fixed;
-  left: 35%;
-  top: 15%;
+  /* left: 37%; */
+  top: 18%;
   font-size: 450%;
   font-weight: bold;
   width: 400px;
@@ -338,78 +330,104 @@ pre {
   border-radius:8px;
   -webkit-text-stroke:1px #000;
 }
+/* 「文字の色は何色？」 */
+.syousai{
+  display: none;
+  position: fixed;
+  top: 7%;
+  font-weight: bold;
+  font-size: 40px;
+}
+.col{
+  font-size: 60px;
+  color: #ffffff;
+  -webkit-text-stroke: 2px #000000;
+}
 
 
 /* 回答選択ボタン */
 .sel1-btn{
   display: none;
   position: fixed;
-  left: 35%;
-  top: 40%;
-  font-size: 300%;
+  left: 22%;
+  top: 42%;
+  width: 300px;
+  height: 140px;
+  font-size: 400%;
   color: rgb(255, 255, 255);
   background-color: red;
+  box-shadow: 0 5px 0 #bd1717;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #bd1717;
+  border-radius:40px;
 }
 .sel2-btn{
   display: none;
   position: fixed;
-  left: 60%;
-  top: 40%;
-  font-size: 300%;
+  right: 22%;
+  top: 42%;
+  width: 300px;
+  height: 140px;
+  font-size: 400%;
   color: rgb(255, 255, 255);
   background-color: blue;
+  box-shadow: 0 5px 0 #1b77ce;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #1b77ce;
+  border-radius:40px;
 }
 .sel3-btn{
   display: none;
   position: fixed;
-  left: 33%;
-  top: 58%;
-  font-size: 300%;
+  left: 22%;
+  top: 65%;
+  width: 300px;
+  height: 140px;
+  font-size: 400%;
   color: rgb(0, 0, 0);
   background-color: yellow;
+  box-shadow: 0 5px 0 #cec21b;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #cec21b;
+  border-radius:40px;
 }
 .sel4-btn{
   display: none;
   position: fixed;
-  left: 58%;
-  top: 58%;
-  font-size: 300%;
+  right: 22%;
+  top: 65%;
+  width: 300px;
+  height: 140px;
+  font-size: 400%;
   color: rgb(255, 255, 255);
   background-color: green;
+  box-shadow: 0 5px 0 #4bad42;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #4bad42;
+  border-radius:40px;
 }
 
 
 /* 結果表示モーダル */
 /* 正解・不正解表示 */
 .anser{
-  font-size: 110%;
+  font-size: 120%;
   -webkit-text-stroke:1px #000;
 }
 /* 答え表示 */
 .Sanser{
-  font-size: 70%;
+  font-size: 90%;
   -webkit-text-stroke:1px #000;
 }
 /* 次の問題ボタン */
 .next-btn{
   color: rgb(0, 0, 0);
   background-color: #ff8800;
+  box-shadow: 0 5px 0 #d3723a;
   font-weight: bold;
-  border: 2px solid #453a3a;
+  border: 2px solid #d3723a;
   font-size: 250%;
-  border-radius:8px;
+  border-radius:40px;
 }
 
 
@@ -417,10 +435,11 @@ pre {
 .total-btn{
   color: rgb(0, 0, 0);
   background-color: #ff8800;
+  box-shadow: 0 5px 0 #d3723a;
   font-weight: bold;
-  border: 2px solid #453a3a;
+  border: 2px solid #d3723a;
   font-size: 250%;
-  border-radius:8px;
+  border-radius:40px;
 }
 
 
@@ -429,14 +448,15 @@ pre {
   display: none;
   position: fixed;
   z-index: 100;
-  left: 3%;
-  top: 10%;
+  /* left: 3%;
+  top: 4%; */
+  margin-left: 20%;
   height: 100%;
   width: 100%;
 }
 .modal-content {
   background-color: #f4f4f4;
-  margin: 5% auto;    
+  /* margin: 18%;     */
   width: 60%;
 }
 .modal-body {
@@ -449,10 +469,20 @@ pre {
 
 @media screen and (max-width: 1600px){
   .zoom{
-    width: 70%;
+    width: 80%;
   }
   .rulemodal-content {
     margin: 4% auto;
+  }
+  .modal {
+    margin-top: 19%;
+  }
+  .quest{
+    left: 37%;
+  }
+  /* 「文字の色は何色？」 */
+  .syousai{
+    left: 40%;
   }
 
 }
@@ -463,10 +493,44 @@ pre {
   .rulemodal-content {
     margin: 4% auto;
   } 
+  .modal {
+    margin-top: 22%;
+  }
+  .quest{
+    left: 35%;
+  }
+  /* 「文字の色は何色？」 */
+  .syousai{
+    left: 39%;
+  }
+}
+@media screen and (max-width: 1200px){
+  .modal {
+    margin-top: 24%;
+  }
+  .quest{
+    left: 33%;
+  }
+  /* 「文字の色は何色？」 */
+  .syousai{
+    left: 37%;
+  }
+}
+@media screen and (max-width: 1150px){
+  .modal {
+    margin-top: 27%;
+  }
+  .quest{
+    left: 32%;
+  }
+  /* 「文字の色は何色？」 */
+  .syousai{
+    left: 37%;
+  }
 }
 @media screen and (max-width: 1250px){
   .zoom{
-    width: 93%;
+    width: 70%;
   }
   .rulemodal-content {
     margin: 6% auto;

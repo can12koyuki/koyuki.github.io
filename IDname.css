@@ -24,6 +24,13 @@ body{
   font-size: 280%;
 }
 
+/* ボタンクリック時の動作 */
+.OKturn-btn:active, .id:active, 
+.Room-name:active,.Room-in:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
 /* ID名全体 */
 .ID{
   position: fixed;
@@ -45,10 +52,11 @@ body{
 .OKturn-btn {
   color: rgb(0, 0, 0);
   background-color: #faa6a6;
+  box-shadow: 0 5px 0 #a84343;
   font-size: 150%;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #a84343;
+  border-radius:40px;
 }
 /* ID名表示 */
 .myName{
@@ -95,10 +103,11 @@ body{
 .Room-in{
   color: rgb(0, 0, 0);
   background-color: #00ffbb;
+  box-shadow: 0 5px 0 #287a64;
   font-size: 150%;
   font-weight: bold;
-  border: 2px solid #453a3a;
-  border-radius:8px;
+  border: 2px solid #287a64;
+  border-radius:40px;
 }
 
 

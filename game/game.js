@@ -73,6 +73,7 @@ scope: {
   const totalbtn = document.getElementById('totalbtn');              // 「もどる」ボタン
 
   const Quest = document.getElementById('Q');                        // 問題表示部分
+  const Qsyousai = document.getElementById('syousai');               // 「文字の色は何色？」
   const quest = document.getElementById("quest");                    // 問題の内容をランダム表示
 
   const selbtn1 = document.getElementById('selbtn1');                // 選択肢「あか」ボタン
@@ -352,7 +353,7 @@ scope: {
     });
 
     // 自分側のメッセージ
-    messages.textContent += gamemsg;
+    messages.textContent += gamemsg + '\n';
     messages.scrollTo(0, messages.scrollHeight);
     console.log("('Д') < 自分の成績！");
 
@@ -370,9 +371,12 @@ scope: {
 
     // はじめの画面にする
     Quest.style.display = 'none';
+    Qsyousai.style.display = 'none';
     // Rulemodal.style.display = 'block';
     colorgame.style.display = 'block';
     gamestart.style.display = 'block';
+    writeButton.style.display = 'block';
+    dataStreamInput.style.display = 'block';
   })
 
 

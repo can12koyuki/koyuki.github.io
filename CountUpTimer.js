@@ -1,3 +1,4 @@
+// ビデオ通話画面での通話時間
 
 const localVideo = document.getElementById('local-stream');        //自分のビデオ映像
 

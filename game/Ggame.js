@@ -4,6 +4,11 @@ const colorgame = document.getElementById('colorgame');         // ゲームボ�
 const Rulemodal = document.getElementById('ruleModal');         // ルール説明モーダル
 const Rulevideo = document.getElementById('rule');
 const gamestart = document.getElementById('gamestart');         // ゲームボタン
+const rebtn = document.getElementById('rebtn');
+
+const messages = document.getElementById('messages');              //チャットエリア
+const dataStreamInput = document.getElementById('data-stream');    //チャットボックス
+const writeButton = document.getElementById('write');              //送信ボタン
 
 const ansermodal = document.getElementById('anserModal');       // 答えモーダル
 const nextbtn = document.getElementById('nextbtn');             // 「次の問題」ボタン
@@ -12,11 +17,8 @@ const totalmodal = document.getElementById('totalModal');       // 総合成績�
 const totalbtn = document.getElementById('totalbtn');           // 「もどる」ボタン
 
 const Quest = document.getElementById('Q');                     // 問題表示部分
+const Qsyousai = document.getElementById('syousai');            // 「文字の色は何色？」
 const quest = document.getElementById("quest");                 // 問題の内容をランダム表示
-
-// const easybtn = document.getElementById('gameeasy');            // 難易度「やさしい」ボタン
-// const normalbtn = document.getElementById('gamenormal');        // 難易度「ふつう」ボタン
-// const defbtn = document.getElementById('gamedef');              // 難易度「むずかしい」ボタン
 
 const selbtn1 = document.getElementById('selbtn1');             // 選択肢「あか」ボタン
 const selbtn2 = document.getElementById('selbtn2');             // 選択肢「あお」ボタン
@@ -83,7 +85,6 @@ function GameStartTimerset(){
 }
 
 
-
 var count = 1;
 var total = 0;
 var rand;
@@ -109,26 +110,23 @@ function randomcolor(){
   return ans
 }
 
-
 // 🌟色当てゲームボタン
 colorgame.addEventListener('click', () => {
   // ルール説明モーダル
   Rulemodal.style.display = 'block';
   colorgame.style.display = 'none';
+  writeButton.style.display = 'none';
+  dataStreamInput.style.display = 'none';
   OKbtn.play();
   console.log("ゲーム")
 })
-
-Rulevideo.addEventListener('click', () => {
-  if(Rulevideo.paused){
-    Rulevideo.play();
-    OKbtn.play();
-    console.log(Rulevideo.paused)
-  }else{
-    Rulevideo.pause();
-    NObtn.play();
-    console.log(Rulevideo.paused)
-  }
+// ルール説明モーダル「もどる」ボタン
+rebtn.addEventListener('click', () => {
+  // ルール説明モーダル
+  Rulemodal.style.display = 'none';
+  colorgame.style.display = 'block';
+  writeButton.style.display = 'block';
+  dataStreamInput.style.display = 'block';
 })
 
 
@@ -149,8 +147,11 @@ gamestart.addEventListener('click', () => {
 
   // ルール説明モーダル
   Rulemodal.style.display = 'none';
+  writeButton.style.display = 'none';
+  dataStreamInput.style.display = 'none';
   // 問題表示部分
   Quest.style.display = 'block';
+  Qsyousai.style.display = 'block';
   // 選択肢ボタン
   selbtn1.style.display = 'block';
   selbtn2.style.display = 'block';
@@ -162,43 +163,7 @@ gamestart.addEventListener('click', () => {
   GameStartTimerset();
   // 問題数と正解数
   console.log(count,total)
-
-  // var Timer = setInterval(function(){
-  //   --totalSeconds;
-  //   document.getElementById("Vtimer").innerHTML = totalSeconds;
-  //   countDown.play();
-
-  //   if(totalSeconds == 0){
-  //     gameBGM.play();
-  //     gameBGM.loop = true;
-  //     gameBGM.volume = 0.6;
-      
-  //     clearInterval(Timer);
-  //     Q.play();
-
-  //     // ルール説明モーダル
-  //     Rulemodal.style.display = 'none';
-  //     // 問題表示部分
-  //     Quest.style.display = 'block';
-  //     // 選択肢ボタン
-  //     selbtn1.style.display = 'block';
-  //     selbtn2.style.display = 'block';
-  //     selbtn3.style.display = 'block';
-  //     selbtn4.style.display = 'block';
-
-  //     // ランダムで指定された色
-  //     rand = randomcolor();
-  //     GameStartTimerset();
-  //     // 問題数と正解数
-  //     console.log(count,total)
-  //   }
-  // }, 1000);
 });
-
-
-// 「やさしい」
-// easybtn.addEventListener('click', () => {
-// })
 
 
 // 🌟ゲーム選択肢ボタン（あか）
