@@ -29,10 +29,14 @@ if(window.localStorage) {
 
 // 別のファイルから関数呼び出し
 const myName = localStorage.getItem("OKID");
-const romagi = window.globalFunction.roma(localStorage.getItem("OKID"))
-document.getElementById("my-id").innerHTML = myName
-console.log('変換前 ' + myName + ', 変換後 ' + romagi)
 
+// 初めて使うブラウザでは↓のようにしないとエラーが出てしまう
+// （最初はローカルストレージに何もない(null)ため，ローマ字変換でエラーになる）
+if(myName != null){
+  const romagi = window.globalFunction.roma(localStorage.getItem("OKID"))
+  document.getElementById("my-id").innerHTML = myName
+  console.log('変換前 ' + myName + ', 変換後 ' + romagi)
+}
 
 //ID決定ボタン
 IDnameOK.addEventListener('click', () => {
